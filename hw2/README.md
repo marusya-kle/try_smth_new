@@ -26,15 +26,44 @@ python draw_wiki.py --json Дорогомилово.json --output graph.png # в
 ```
 
 
-## Результаты краулинга
+**Результаты краулинга**
 
 Глубина обхода: 5
 
 Увы, графа связей не будет, так как перестало все работать при глубине 3. 
 
-### wikipedia_articles.py
-- это и есть веб-кроулер
+wikipedia_articles.py - это и есть веб-кроулер
 
-### draw_wiki.py
-- это скрипт для визуализации графа
+draw_wiki.py - это скрипт для визуализации графа
 
+**Задание 3: REST API в ENCODE**
+
+```bash
+nano get_domains.py
+python3 hw2/get_domains.py
+```
+В задании было необходимо найти все DNase-seq и TF ChIP-seq эксперименты, поэтому мы их искали так: 
+```bash
+GET /search/?type=Experiment&assay_title=DNase-seq&status=released&limit=all&frame=object
+GET /search/?type=Experiment&assay_title=TF+ChIP-seq&status=released&biosample_ontology.term_name=
+{cell_line}&limit=all&frame=object
+```
+Использовали поля: @graph[].biosample_ontology.classification = "cell line", @graph[].biosample_ontology.term_name, @graph[].target.label.
+
+
+
+Далее проходил маппинг, то есть сопоставление названий генов и UniProt ID. 
+
+Создание задания на маппинг: ```bash POST /idmapping/run```
+
+Проверка статуса: ```bash GET /idmapping/status/{jobId}```
+
+Получение результатов: ```bash GET /idmapping/results/{jobId}```
+
+
+
+После этого для списка UniProt ID получали все связанные с ними домены InterPro: 
+
+```bash GET /protein/UniProt/{accession_ids}/entry/interpro/```
+
+Данные брали из поля: results[].entry_interpro[].metadata.name.

@@ -1,0 +1,27 @@
+{
+  "seq1": {
+    "ATGC": 1,
+    "TGCG": 1,
+    "GCGT": 1,
+    "CGTA": 2,
+    "GTAC": 1,
+    "TACG": 1,
+    "ACGT": 1,
+    "GTAG": 1,
+    "TAGC": 2,
+    "AGCT": 2,
+    "GCTA": 2,
+    "CTAG": 2
+  },
+  "seq2": {
+    "GCTA": 3,
+    "CTAG": 3,
+    "TAGC": 3,
+    "AGCT": 2,
+    "AGCU": 1,
+    "GCUU": 1,
+    "CUUA": 1,
+    "UUAG": 1,
+    "UAGC": 1
+  }
+}

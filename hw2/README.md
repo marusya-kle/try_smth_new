@@ -67,3 +67,11 @@ GET /search/?type=Experiment&assay_title=TF+ChIP-seq&status=released&biosample_o
 ```bash GET /protein/UniProt/{accession_ids}/entry/interpro/```
 
 Данные брали из поля: results[].entry_interpro[].metadata.name.
+
+
+Результат работы:
+   - Лучшая клеточная линия: K562
+   - Найдено TF белков: 23
+   - Сопоставлено с UniProt: 23
+   - Белков с доменами: 19
+   - Всего найдено доменов Pfam: 31

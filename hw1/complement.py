@@ -1,15 +1,20 @@
-seq = input()
-seq_r = seq[::-1]
+#!/usr/bin/env python3
 
+import sys
 
-dict = {"A": "T", "T": "A", "C": "G", "G": "C"}
-seq_rc = ''
-for i in seq_r:
-  seq_rc += (dict[i])
- 
-from collections import Counter
-gc = Counter(seq)
-GC = round((int(gc["G"])+int(gc["C"]))/len(seq), 3)
+def reverse_complement(seq):
+    complement = {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}
+    return ''.join(complement[base] for base in seq.upper()[::-1])
+
+def gc_content(seq):
+    seq = seq.upper()
+    gc_count = seq.count('G') + seq.count('C')
+    return round(gc_count / len(seq), 3)
+
+seq = sys.argv[1]
+
+seq_rc = reverse_complement(seq)
+gc = gc_content(seq)
 
 print(seq_rc)
-print(GC)
+print(gc)

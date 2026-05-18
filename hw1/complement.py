@@ -11,7 +11,12 @@ def gc_content(seq):
     gc_count = seq.count('G') + seq.count('C')
     return round(gc_count / len(seq), 3)
 
-seq = sys.argv[1]
+parser = argparse.ArgumentParser(description='')
+parser.add_argument('--seq', required=True, help='')
+args = parser.parse_args()
+
+seq_rc = reverse_complement(args.seq)
+gc = gc_content(args.seq)
 
 seq_rc = reverse_complement(seq)
 gc = gc_content(seq)

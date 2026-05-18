@@ -24,7 +24,7 @@ def read_fasta(filename):
     
     return sequences
 
-def count_kmers(sequence, k=2):
+def count_kmers(sequence, k=3):
     kmers = defaultdict(int)
     seq_len = len(sequence)
     

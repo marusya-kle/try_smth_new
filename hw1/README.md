@@ -52,3 +52,21 @@ cat cnts.json
 
 Ура!
 
+# Домашнее задание 1. Git, github, CI/CD
+
+## Основные команды для работы с репозиторием
+
+```bash
+# Вход в WSL и проверка SSH подключения к GitHub
+wsl
+ssh -T git@github.com
+
+# Проверка статуса и переход в папку с заданием
+git status
+cd try_smth_new/hw1
+
+# Работа с README
+nano README.md
+git add README.md
+git commit -m "Мои изменения"
+git push

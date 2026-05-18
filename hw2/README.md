@@ -38,7 +38,3 @@ python draw_wiki.py --json Дорогомилово.json --output graph.png # в
 ### draw_wiki.py
 - это скрипт для визуализации графа
 
-## Установка зависимостей
-
-```bash
-pip install requests beautifulsoup4 networkx matplotlib

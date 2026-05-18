@@ -18,8 +18,5 @@ args = parser.parse_args()
 seq_rc = reverse_complement(args.seq)
 gc = gc_content(args.seq)
 
-seq_rc = reverse_complement(seq)
-gc = gc_content(seq)
-
 print(seq_rc)
 print(gc)
